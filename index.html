@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Air Max</title>
+		<!-- jQuery library -->
+		<script src="bower_components/jquery/jquery.min.js"></script>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
+		<!-- Latest compiled JavaScript -->
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="js/airy-max.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+				<h1>AiryMax</h1> 
+				<p>AiryMax places all of your flight options on one easy to read chart!</p> 
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Origin</label>
+						<input id="origin" class="form-control" type="text" placeholder="origin"></input>
+					</div>
+					<div class="form-group">
+						<label>Departure Date</label>
+						<input id="departDate" class="form-control" type="date"></input>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Destination</label>
+						<input id="destination" class="form-control" type="text" placeholder="origin"></input>
+					</div>
+					<div class="form-group">
+						<label>Return Date</label>
+						<input id="returnDate" class="form-control" type="date"></input>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary" onclick="searchFlights()">Search Flights!</button>
+			<h1>Flight Information:</h1>
+			<br></br>
+			<p id="flightInfo"></p>
+		</div>
+	</body>
+</html>
