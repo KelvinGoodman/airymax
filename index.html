@@ -8,7 +8,8 @@
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
 		<!-- Latest compiled JavaScript -->
 		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="js/airy-max.js"></script>
+		<script src="bower_components/Chart.js/dist/Chart.js"></script>
+		<script src="js/AiryMax.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -41,7 +42,9 @@
 			<button type="button" class="btn btn-primary" onclick="searchFlights()">Search Flights!</button>
 			<h1>Flight Information:</h1>
 			<br></br>
+			<canvas id="myChart" width="400" height="400"></canvas>
 			<p id="flightInfo"></p>
 		</div>
+		<script src="js/FlightChart.js"></script>
 	</body>
 </html>
