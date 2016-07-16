@@ -12,6 +12,7 @@ dataType: 'json',
 data: JSON.stringify(request),
 success: function (data) {
 //Once we get the result you can either send it to console or use it anywhere you like.
+buildFlightList(data);
 document.getElementById("flightInfo").innerHTML = JSON.stringify(data);
 },
 error: function(){
@@ -43,4 +44,18 @@ function buildRequest(){
 }
 };
 	return FlightRequest;
+}
+
+function buildFlightList(flightData){
+	var flightList = [];
+	for (optionNum in flightData.trips.tripOption)
+	{
+		var flight = {};
+		flight.saleTotal = flightData.trips.tripOption[optionNum].saleTotal;
+		flight.duration = flightData.trips.tripOption[optionNum].slice[0].duration;
+		flight.layovers = flightData.trips.tripOption[optionNum].slice[0].segment.length - 1;
+		flightList[optionNum] = flight;
+		//alert(flight.saleTotal + " " + flight.duration + " " + flight.layovers );
+	}
+	
 }
