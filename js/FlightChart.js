@@ -9,8 +9,7 @@ var quad1Chart = new Chart(ctx, {
     type: 'line',
     data: {
         datasets: [{
-			label: '',
-            data: [{x: 8,y: 0}, {x: 5,y: 10}, {x: 10,y: 5}],
+            data: [{x: -10, y: 0}, {x: 0, y: 10}, {x: 10, y: 5}],
 			borderWidth: 1,
 			pointStyle: ('image', img),
 			radius: 50,
@@ -22,19 +21,18 @@ var quad1Chart = new Chart(ctx, {
         scales: {
             xAxes: [{
                 type: 'linear',
-                display: false,
+                position: 'bottom',
 				ticks: {
                     max: 15,
-                    min: -10,
+                    min: -15,
                     stepSize: 5
                 }
             }],
 			yAxes: [{
                 type: 'linear',
-                display: false,
 				ticks: {
                     max: 15,
-                    min: -10,
+                    min: 0,
                     stepSize: 5
                 }
             }]
@@ -53,7 +51,7 @@ var quad1Chart = new Chart(ctx, {
     type: 'line',
     data: {
         datasets: [{
-            data: [{x: 8,y: 0}, {x: 5,y: 10}, {x: 10,y: 5}],
+            data: [{x: -10, y: 0}, {x: 0, y: 10}, {x: 10, y: 5}],
 			borderWidth: 1,
 			pointStyle: ('image', img),
 			radius: 50,
@@ -65,19 +63,18 @@ var quad1Chart = new Chart(ctx, {
         scales: {
             xAxes: [{
                 type: 'linear',
-                display: false,
+                position: 'bottom',
 				ticks: {
                     max: 15,
-                    min: -10,
+                    min: -15,
                     stepSize: 5
                 }
             }],
 			yAxes: [{
                 type: 'linear',
-                display: false,
 				ticks: {
                     max: 15,
-                    min: -10,
+                    min: 0,
                     stepSize: 5
                 }
             }]
@@ -96,7 +93,7 @@ var quad1Chart = new Chart(ctx, {
     type: 'line',
     data: {
         datasets: [{
-            data: [{x: 8,y: 0}, {x: 5,y: 10}, {x: 10,y: 5}],
+            data: [{x: -10, y: 0}, {x: 0, y: 10}, {x: 10, y: 5}],
 			borderWidth: 1,
 			pointStyle: ('image', img),
 			radius: 50,
@@ -108,19 +105,18 @@ var quad1Chart = new Chart(ctx, {
         scales: {
             xAxes: [{
                 type: 'linear',
-                display: false,
+                position: 'bottom',
 				ticks: {
                     max: 15,
-                    min: -10,
+                    min: -15,
                     stepSize: 5
                 }
             }],
 			yAxes: [{
                 type: 'linear',
-                display: false,
 				ticks: {
                     max: 15,
-                    min: -10,
+                    min: 0,
                     stepSize: 5
                 }
             }]
@@ -139,7 +135,7 @@ var quad1Chart = new Chart(ctx, {
     type: 'line',
     data: {
         datasets: [{
-            data: [{x: 8,y: 0}, {x: 5,y: 10}, {x: 10,y: 5}],
+            data: [{x: -10, y: 0}, {x: 0, y: 10}, {x: 10, y: 5}],
 			borderWidth: 1,
 			pointStyle: ('image', img),
 			radius: 50,
@@ -151,19 +147,18 @@ var quad1Chart = new Chart(ctx, {
         scales: {
             xAxes: [{
                 type: 'linear',
-                display: false,
+                position: 'bottom',
 				ticks: {
                     max: 15,
-                    min: -10,
+                    min: -15,
                     stepSize: 5
                 }
             }],
 			yAxes: [{
                 type: 'linear',
-                display: false,
 				ticks: {
                     max: 15,
-                    min: -10,
+                    min: 0,
                     stepSize: 5
                 }
             }]
