@@ -47,15 +47,43 @@ function buildRequest(){
 }
 
 function buildFlightList(flightData){
-	var flightList = [];
+	var chartData = {quad1: [], quad2: [], quad3: [], quad4: []};
+	var priceSum = 0;
+	var durationSum = 0;
+	for (optionNum in flightData.trips.tripOption)
+	{
+		priceSum += parseInt(flightData.trips.tripOption[optionNum].saleTotal.split("USD")[1]);
+		durationSum += parseInt(flightData.trips.tripOption[optionNum].slice[0].duration);
+	}
+	
+	chartData.avgPrice = priceSum / flightData.trips.tripOption.length;
+	chartData.avgDuration = durationSum / flightData.trips.tripOption.length;
+	
 	for (optionNum in flightData.trips.tripOption)
 	{
 		var flight = {};
-		flight.saleTotal = flightData.trips.tripOption[optionNum].saleTotal;
+		flight.saleTotal = flightData.trips.tripOption[optionNum].saleTotal.split("USD")[1];
 		flight.duration = flightData.trips.tripOption[optionNum].slice[0].duration;
 		flight.layovers = flightData.trips.tripOption[optionNum].slice[0].segment.length - 1;
-		flightList[optionNum] = flight;
-		//alert(flight.saleTotal + " " + flight.duration + " " + flight.layovers );
+		
+		//determine quadrant for data to be plotted in
+		if ((flight.saleTotal <= chartData.avgPrice)&&(flight.duration <= chartData.avgDuration)){
+			chartData.quad1.push(flight);
+		}
+		else if ((flight.saleTotal >= chartData.avgPrice)&&(flight.duration <= chartData.avgDuration)){
+			chartData.quad2.push(flight);
+		}
+		else if ((flight.saleTotal >= chartData.avgPrice)&&(flight.duration >= chartData.avgDuration)){
+			chartData.quad3.push(flight);
+		}
+		else if ((flight.saleTotal <= chartData.avgPrice)&&(flight.duration >= chartData.avgDuration)){
+			chartData.quad4.push(flight);
+		}
 	}
-	
+	alert(chartData.quad1.length);
+	alert(chartData.quad2.length);
+	alert(chartData.quad3.length);
+	alert(chartData.quad4.length);
+	alert(chartData.avgPrice);
+	alert(chartData.avgDuration);
 }
